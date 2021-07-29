@@ -56,6 +56,15 @@ def close_current_window():
     # time.sleep(1)
     pyautogui.keyUp("alt")
 
+def ScreenShot():
+    # filename = datetime.datetime.now().strftime(" %m-%Y %H-%M-%S")
+    # pyautogui.screenshot('C:\\Users\sloke\\Pictures\\Screenshots\\Screenshot{}.png'.format(filename))
+    # ======or ===========
+    pyautogui.keyDown("win")
+    pyautogui.press("prtscr")
+    # time.sleep(1)
+    pyautogui.keyUp("win")
+    
 def excel():
     os.system('start excel.exe') 
     
@@ -124,6 +133,8 @@ if __name__ == "__main__":
             exit()
         elif  'open camera' in sound:
             camera()
+        elif 'take screenshot' in sound:
+            ScreenShot()
         elif  'switch window' in sound:
             switch_window()
         elif  'close' in sound or 'closing' in sound:
@@ -147,11 +158,6 @@ if __name__ == "__main__":
             subprocess.Popen("C:\\Program Files (x86)\\TypingMaster\\tmaster.exe") 
         elif 'open code blocks' in sound:
             subprocess.Popen("C:\\Program Files\\CodeBlocks\\codeblocks.exe")
-
-
-
-
-
 
 
         # elif 'find file' in sound:
